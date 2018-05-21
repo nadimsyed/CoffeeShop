@@ -14,7 +14,7 @@ namespace CoffeeShop.Controllers
             return View();
         }
 
-        public ActionResult UserReg(string firstName, string lastName, string email, int phoneNumber, string password)
+        public ActionResult UserReg(string firstName ="", string lastName = "", string email = "", int phoneNumber = 313, string password = "")
         {
             ViewBag.FirstName = firstName;
             ViewBag.LastName = lastName;
