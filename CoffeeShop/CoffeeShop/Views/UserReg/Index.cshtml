@@ -14,12 +14,14 @@
     Password: <input type="password" name="Password" /><br />
 
     Security Question:
-    <select>
+    <select id="security" name="SecurityQuestion" >
         <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
         <option value="What is your favorite color?">What is your favorite color?</option>
         <option value="What was your first pet's name?">What was your first pet's name?</option>
         <option value="What was the first nickname you gave someone?">What was the first nickname you gave someone?</option>
     </select><br />
+    @*string security = document.getElementById("security").value;*@
+
     Security Question Answer: <input type="text" maxlength="32" name="SecurityAnswer" pattern="[A-Za-z]{1,32}" /><br />
 
     <input type="submit" name="Submit Registration!" /><br />
