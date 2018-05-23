@@ -3,7 +3,7 @@
     ViewBag.Title = "Registration Index";
 }
 
-<h2>User Registration Page</h2>
+<h2 id="title">User Registration Page</h2>
 <form action="/UserReg/UserReg" method="post">
     <br />
     
@@ -35,7 +35,7 @@
 
         Security Question Answer: <input type="text" maxlength="32" class="form-control" name="SecurityAnswer" pattern="[A-Za-z]{1,32}" /><br />
     </fieldset>
-    <input type="submit" onclick="return CheckPassword(); CheckEmail(); CheckPhoneNumber();" value="Submit Registration!" /><br />
+    <input id="submit" type="submit" onclick="return CheckPassword(); CheckEmail(); CheckPhoneNumber();" value="Submit Registration!" /><br />
     @*<input type="reset" name="Reset" />*@
 
 </form>
