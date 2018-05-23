@@ -11,10 +11,14 @@
     <!--number lets user keyboard on mobile pop up to a number-->
     Email: <input type="email" name="Email" /><br />
     Phone Number: <input type="tel" maxlength="10" min="1111111111" name="PhoneNumber" @*pattern="^[0-9]{10}$"*@ /><br />
-    Password: <input type="password" name="Password" /><br />
 
+    Password: <input id="Password" type="password" name="Password" /><br />
+    Confirm Password: <input id="Password2" type="password" name="Password2" /><br />
+                                                                <div>
+                                                                    <span id="PasswordWarning"></span>
+                                                                </div>
     Security Question:
-    <select id="security" name="SecurityQuestion" >
+    <select id="security" name="SecurityQuestion">
         <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
         <option value="What is your favorite color?">What is your favorite color?</option>
         <option value="What was your first pet's name?">What was your first pet's name?</option>
@@ -24,8 +28,23 @@
 
     Security Question Answer: <input type="text" maxlength="32" name="SecurityAnswer" pattern="[A-Za-z]{1,32}" /><br />
 
-    <input type="submit" name="Submit Registration!" /><br />
+    <input type="submit" onclick="return CheckPassword()" value="Submit Registration!" /><br />
     @*<input type="reset" name="Reset" />*@
 
 </form>
+
+<script>
+    function CheckPassword() {
+        var password = document.getElementById("Password").value;
+        var password2 = document.getElementById("Password2").value;
+        if (password !== password2) {
+            alert("Password is invalid");
+            document.getElementById("PasswordWarning").innerHTML = "<b>Passwords did not match. Please try again!</b>";
+            return false;
+        }
+        return true;
+    }
+</script>
+
+
 
