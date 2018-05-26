@@ -15,7 +15,7 @@
         <div>
             <span id="EmailWarning"></span>
         </div>
-        Phone Number: <input id="PhoneNumber" type="tel" class="form-control" maxlength="10" min="1111111111" name="PhoneNumber" @*pattern="^[0-9]{10}$"*@ /><br />
+        Phone Number: <input id="PhoneNumber" type="number" class="form-control" maxlength="10" min="1111111111" name="PhoneNumber" pattern="^[0-9]{10}$" /><br />
         <div>
             <span id="PhoneWarning"></span>
         </div>
@@ -35,7 +35,7 @@
 
         Security Question Answer: <input type="text" maxlength="32" class="form-control" name="SecurityAnswer" pattern="[A-Za-z]{1,32}" /><br />
     </fieldset>
-    <input id="submit" type="submit" onclick="return CheckPassword(); CheckEmail(); CheckPhoneNumber();" value="Submit Registration!" /><br />
+    <input id="submit" type="submit" onclick="return CheckPassword() && CheckEmail() && CheckPhoneNumber();" value="Submit Registration!" /><br />
     @*<input type="reset" name="Reset" />*@
 
 </form>
@@ -56,8 +56,8 @@
 <script>
     function CheckEmail() {
         var email = document.getElementById("Email").value;
-        if (email.match("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")) {
-            //alert("Password is invalid");
+        if (!email.match("^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$")) {
+            //alert("Email is invalid");
             document.getElementById("EmailWarning").innerHTML = "<b>Email was not in the correct format. Please try again!</b>";
             return false;
         }
@@ -67,9 +67,9 @@
 
 <script>
     function CheckPhoneNumber() {
-        var email = document.getElementById("PhoneNumber").value;
-        if (email.match("^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$")) {
-            //alert("Password is invalid");
+        var phone = document.getElementById("PhoneNumber").value;
+        if (!phone.match("^\d{10}$")) {
+            //alert("Phone Number is invalid");
             document.getElementById("PhoneWarning").innerHTML = "<b>Phone number was not in the correct format. Please try again!</b>";
             return false;
         }
