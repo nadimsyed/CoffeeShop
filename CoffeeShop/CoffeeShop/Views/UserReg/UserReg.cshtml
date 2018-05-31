@@ -3,15 +3,39 @@
     ViewBag.Title = "UserReg";
 }
 
-<h2>User Registration</h2>
-<h2>Successfully Registered @ViewBag.FirstName @ViewBag.LastName's Account!</h2>
-<h3>Your user account is @ViewBag.Email</h3>
-<h3>The account was registered to the Phone Number: @ViewBag.PhoneNumber</h3>
+
+    @*<h2>User Registration</h2>
+    <h2>Successfully Registered @ViewBag.Users[ViewBag.Users.Count--].FirstName @ViewBag.Users[ViewBag.Users.Count--].LastName's Account!</h2>
+    <h3>Your user account is @ViewBag.Users[ViewBag.Users.Count--].Email</h3>
+    <h3>The account was registered to the Phone Number: @ViewBag.Users[ViewBag.Users.Count--].PhoneNumber</h3>
 
 
-<h3>The account was registered with the security question: @ViewBag.SecurityQuestion</h3>
-<h3>The to the security question was : @ViewBag.SecurityAnswer</h3>
+    <h3>The account was registered with the security question: @ViewBag.Users[ViewBag.Users.Count--].SecurityQuestion</h3>
+    <h3>The to the security question was : @ViewBag.Users[ViewBag.Users.Count--].SecurityAnswer</h3>
 
 
-<h4>For security reasons we will not display your password, but soon you should receive an email notifying you of the account being created. Therein shall be your username(Email address provided) and your password.</h4>
+    <h4>For security reasons we will not display your password, but soon you should receive an email notifying you of the account being created. Therein shall be your username(Email address provided) and your password.</h4>*@
+<h1>@ViewBag.message</h1>
+<table class="table-bordered">
+    <tr>
+        <th>Email</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>SecurityQuestion</th>
+        <th>SecurityAnswer</th>
 
+    </tr>
+
+
+    @foreach (CoffeeShop.Models.User item in ViewBag.Users)
+    {
+    <tr>
+        <td>@item.Email</td>
+        <td>@item.FirstName</td>
+        <td>@item.LastName</td>
+        <td>@item.SecurityQuestion</td>
+        <td>@item.SecurityAnswer</td>
+
+    </tr>
+    }
+</table>

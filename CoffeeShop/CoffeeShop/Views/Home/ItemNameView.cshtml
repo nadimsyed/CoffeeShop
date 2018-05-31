@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "ItemNameView";
+}
+
+<h2>ItemNameView</h2>
+
+<table>
+    <tr>
+        <th>ItemId</th>
+        <th>Description</th>
+        <th>Email</th>
+
+    </tr>
+
+
+    @for (int i = 0; i < ViewBag.Items.Count; i++)
+    {
+        <tr>
+            <td>@ViewBag.Items[i].ItemId</td>
+            <td>@ViewBag.Items[i].Description</td>
+            <td>@ViewBag.Items[i].Email</td>
+
+        </tr>
+    }
+</table>

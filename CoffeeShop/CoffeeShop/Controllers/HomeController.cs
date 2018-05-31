@@ -1,5 +1,7 @@
-﻿using System;
+﻿using CoffeeShop.Models;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,6 +12,10 @@ namespace CoffeeShop.Controllers
     {
         public ActionResult Index()
         {
+            CoffeeEntities ORM = new CoffeeEntities();
+            ViewBag.Items = ORM.Items.ToList();
+            ViewBag.Users = ORM.Users.ToList();
+
             return View();
         }
 
@@ -26,5 +32,14 @@ namespace CoffeeShop.Controllers
 
             return View();
         }
+
+        public ActionResult ItemNameView(string Name)
+        {
+            CoffeeEntities ORM = new CoffeeEntities();
+            ViewBag.Items = ORM.Items.Where(x => x.Name == Name).ToList();
+
+            return View();
+        }
+
     }
 }

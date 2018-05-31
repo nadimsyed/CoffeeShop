@@ -1,31 +1,63 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<h1>Welcome to the CoffeeShop</h1><br /><br />
+<h2>Our Menu is listed below</h2><br /><br />
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<table class="table-bordered">
+    <tr>
+        <th>Item Name</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </tr>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+
+    @foreach (CoffeeShop.Models.Item item in ViewBag.Items)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Description</td>
+            <td>@item.Quantity</td>
+            <td>@item.Price</td>
+
+            @*<td>
+                    <a href="/Home/Contact?ItemId=@item.ItemId" class="btn-primary">
+                        Delete Item
+                    </a>
+                </td>*@
+
+
+        </tr>
+    }
+</table><br /> <br />
+
+@*<table class="table-bordered">
+        <tr>
+            <th>Email</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>SecurityQuestion</th>
+            <th>SecurityAnswer</th>
+
+        </tr>
+
+
+        @foreach (CoffeeShop.Models.User item in ViewBag.Users)
+        {
+        <tr>
+            <td>@item.Email</td>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.SecurityQuestion</td>
+            <td>@item.SecurityAnswer</td>
+
+        </tr>
+        }
+    </table>*@
+
+<form action="/Home/ItemNameView">
+    <input type="text" name="Name" />
+    <input type="submit" value="List Items w/ Name ___" class="btn-primary" />
+
+</form>
