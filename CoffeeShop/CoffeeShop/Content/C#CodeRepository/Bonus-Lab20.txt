@@ -1,0 +1,22 @@
+1) SELECT * FROM Customers
+2) SELECT * FROM Customers WHERE City = 'London' OR City = 'Paris'
+3) SELECT DISTINCT  City FROM Customers
+4) SELECT FirstName FROM Employees ORDER BY FirstName ASC
+5) SELECT AVG(UnitPrice) AS AveragePrice FROM Products
+6) SELECT TOP (1) UnitPrice, ProductName FROM Products ORDER BY UnitPrice DESC
+7) SELECT * FROM Employees WHERE Notes LIKE '%BA%'
+8) SELECT SUM(UnitPrice), OrderID FROM [Order Details] GROUP BY OrderID ORDER BY OrderID ASC 
+9) SELECT * FROM Employees WHERE HireDate > '1994-01-01 00:00:00.000'
+10) SELECT DATEDIFF(year, HireDate, '2018-05-29 00:00:00.000') AS YearsWorked, FirstName, LastName  FROM Employees
+11) SELECT * FROM Products ORDER BY QuantityPerUnit ASC
+SELECT * FROM Products ORDER BY QuantityPerUnit DESC
+
+12) SELECT * FROM Products WHERE UnitsInStock < 6
+13) SELECT * FROM Products WHERE Discontinued = 1
+14) SELECT * FROM Products WHERE ProductName LIKE '%Tofu%'
+15) SELECT TOP (1) UnitPrice, ProductName FROM Products ORDER BY UnitPrice DESC
+16) SELECT * FROM Employees WHERE HireDate > '1993-01-01 00:00:00.000'
+17) SELECT * FROM Employees WHERE TitleOfCourtesy = 'Ms.'
+SELECT * FROM Employees WHERE TitleOfCourtesy = 'Mrs.'
+
+18) SELECT * FROM Employees WHERE HomePhone LIKE '%206%'

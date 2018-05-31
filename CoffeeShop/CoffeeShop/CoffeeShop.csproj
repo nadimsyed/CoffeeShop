@@ -182,6 +182,10 @@
     <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\C#CodeRepository\Bonus-Lab20.txt" />
+    <Content Include="Content\Canadian.jpg" />
+    <Content Include="Content\EggCheese.jpg" />
+    <Content Include="Content\FrenchVanilla.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
