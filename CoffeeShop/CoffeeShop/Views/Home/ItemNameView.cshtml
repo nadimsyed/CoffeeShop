@@ -7,9 +7,9 @@
 
 <table>
     <tr>
-        <th>ItemId</th>
+        <th>Name</th>
         <th>Description</th>
-        <th>Email</th>
+        <th>Price</th>
 
     </tr>
 
@@ -17,9 +17,9 @@
     @for (int i = 0; i < ViewBag.Items.Count; i++)
     {
         <tr>
-            <td>@ViewBag.Items[i].ItemId</td>
+            <td>@ViewBag.Items[i].Name</td>
             <td>@ViewBag.Items[i].Description</td>
-            <td>@ViewBag.Items[i].Email</td>
+            <td>@ViewBag.Items[i].Price</td>
 
         </tr>
     }
