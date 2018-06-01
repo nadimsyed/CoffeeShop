@@ -8,17 +8,29 @@ namespace CoffeeShop.Models
 {
     interface IDAO
     {
-        User GetUser(string email);
+        Item GetItem(int id);
 
-        List<User> GetUserList();
+        List<Item> GetItemList();
 
-        void AddUser(User user);
+        void AddItem(Item item);
 
-        void DeleteUser(string email);
+        void DeleteItem(int id);
 
-        void EditUser(User user);
+        void EditItem(Item item);
 
         void Dispose();
+        
+        //User GetUser(string email);
+
+        //List<User> GetUserList();
+
+        //void AddUser(User user);
+
+        //void DeleteUser(string email);
+
+        //void EditUser(User user);
+
+        //void Dispose();
 
     }
 }

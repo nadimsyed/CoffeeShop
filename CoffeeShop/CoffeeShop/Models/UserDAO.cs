@@ -6,7 +6,7 @@ using System.Web;
 
 namespace CoffeeShop.Models
 {
-    public class UserDAO : IDAO
+    public class UserDAO /*: IDAO*/
     {
         private CoffeeEntities db;
 

@@ -41,13 +41,22 @@
             @Html.DisplayFor(modelItem => item.Price)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ItemId }, new { @class = "btn btn-primary" }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ItemId }, new { @class = "btn btn-primary" })
+            @Html.ActionLink("Edit", "Edit", new { id = item.ItemId }, new { @class = "btn btn-primary" }) |
+            @*@Html.ActionLink("Delete", "Delete", new { id = item.ItemId }, new { @class = "btn btn-primary" })*@
+            <button onclick="return ConfirmDelete()">@Html.ActionLink("Delete", "DeleteConfirmed", new { id = item.ItemId }) </button>
         </td>
     </tr>
 }
 
 </table>
+
+<script>
+    function ConfirmDelete() {
+        if (!confirm("Click to confirm")) {
+            return false;
+        }
+    }
+</script>
 
 <script>
     function Admin(){
