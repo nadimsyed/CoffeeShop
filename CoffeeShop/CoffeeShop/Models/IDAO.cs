@@ -8,6 +8,7 @@ namespace CoffeeShop.Models
 {
     interface IDAO
     {
+        //Could use arguements with default value and put that way you could potentially use for both types of delete and get
         Item GetItem(int id);
 
         List<Item> GetItemList();
