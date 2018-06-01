@@ -11,6 +11,7 @@ namespace CoffeeShop.Models
 {
     public class ItemsController : Controller
     {
+        //TODO: Try to incorporate a try-catch as last challenge to have a more user friendly way of dealing with errors for protection
         private ItemDAO dao = new ItemDAO();
 
 
