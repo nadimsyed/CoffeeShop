@@ -20,6 +20,12 @@ namespace CoffeeShop.Models
             return db.Items.Find(Id);
         }
 
+        public void UpdateQuantity(int Id, int quantity)
+        {
+            db.Items.Find(Id).Quantity = quantity;
+            db.SaveChanges();
+        }
+
         public List<Item> GetItemList()
         {
             return db.Items.ToList();

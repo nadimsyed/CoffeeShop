@@ -11,6 +11,8 @@ namespace CoffeeShop.Models
         //Could use arguements with default value and put that way you could potentially use for both types of delete and get
         Item GetItem(int id);
 
+        void UpdateQuantity(int Id, int quantity);
+        
         List<Item> GetItemList();
 
         List<Item> ItemSort(string column);

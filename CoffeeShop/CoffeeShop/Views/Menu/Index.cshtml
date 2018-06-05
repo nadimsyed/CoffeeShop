@@ -15,40 +15,45 @@
         <th>
             <a href="~/Menu/ItemSort?column=Description">@Html.DisplayNameFor(model => model.Description)</a>
         </th>
-        @*<th>
-                @Html.DisplayNameFor(model => model.Quantity)
-            </th>*@
         <th>
             <a href="~/Menu/ItemSort?column=Price">@Html.DisplayNameFor(model => model.Price)</a>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
         </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            @*<td>
-                    @Html.DisplayFor(modelItem => item.Quantity)
-                </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            @*<td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ItemId }, new { @class = "btn btn-primary" }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ItemId }, new { @class = "btn btn-primary" })
-                    <button onclick="return ConfirmDelete()">@Html.ActionLink("Delete", "DeleteConfirmed", new { id = item.ItemId }) </button>
-                </td>*@
-            <td><a href="~/Menu/Add?id=@item.ItemId" class="btn btn-primary">Add to Bag</a></td>
-        </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ItemId }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ItemId }, new { @class = "btn btn-primary" })
+            <button onclick="return ConfirmDelete()">@Html.ActionLink("Delete", "DeleteConfirmed", new { id = item.ItemId }) </button>
+        </td>*@
+        <td><a href="~/Menu/Add?id=@item.ItemId&quantity=@(item.Quantity+=1)" class="btn btn-primary">Add to Bag</a></td>
+    </tr>
     }
 
-</table>
+</table><br /><br />
+              <form action="/" method="post">
+                  <label>Enter Quantity desired of item you will add</label>
+                  <input type="number" name="quantity" min="1" />
+              </form>
+<br /><br />
 <a href="~/Menu/Add?id=0" class="btn btn-primary">Go To Cart</a>
 
 
@@ -74,10 +79,14 @@
                         }
                         else
                         {
+                            var sum = 0.00;
                                 foreach (Item i in (List<Item>)Session["Cart"])
                                 {
                                         <li>@i.Name which has a descprition of "@i.Description"  <br />   Price: @i.Price</li>
+                                    var convert = i.Price;
+                                    sum += double.Parse(convert);
                                 }
+                            <li>Total for Cart: @sum</li>
                         }
                     </ul>
 

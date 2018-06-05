@@ -11,18 +11,13 @@ namespace CoffeeShop.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Item
     {
         public int ItemId { get; set; }
-        [Required(ErrorMessage = "A name is required")]
         public string Name { get; set; }
-        [Required(ErrorMessage = "A description is required")]
         public string Description { get; set; }
-        [Range(1, 1000, ErrorMessage = "Quantity must be between 1 and 1000")]
         public int Quantity { get; set; }
-        [Range(0.01, 1000.00, ErrorMessage = "Price must be between 0.01 and 1000.00")]
         public string Price { get; set; }
     }
 }
