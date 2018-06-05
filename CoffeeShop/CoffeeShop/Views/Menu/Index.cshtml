@@ -85,7 +85,7 @@
                             var sum = 0.00;
                                 foreach (Item i in (List<Item>)Session["Cart"])
                                 {
-                                        <li>@i.Name which has a description of "@i.Description"  <br />   Price: @i.Price  Quantity: @i.Quantity</li>
+                                        <li>@i.Name which has a description of "@i.Description"  <br />   Price: @i.Price  @*Quantity: @i.Quantity*@</li>
                                     var convert = i.Price;
                                     sum += double.Parse(convert);
                                 }
