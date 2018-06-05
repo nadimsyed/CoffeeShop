@@ -44,7 +44,10 @@
             @Html.ActionLink("Delete", "Delete", new { id = item.ItemId }, new { @class = "btn btn-primary" })
             <button onclick="return ConfirmDelete()">@Html.ActionLink("Delete", "DeleteConfirmed", new { id = item.ItemId }) </button>
         </td>*@
-        <td><a href="~/Menu/Add?id=@item.ItemId&quantity=@(item.Quantity+=1)" class="btn btn-primary">Add to Bag</a></td>
+        
+        @*insert below after ItemId*@
+        @*&quantity=@(item.Quantity+=1)*@
+        <td><a href="~/Menu/Add?id=@item.ItemId" class="btn btn-primary">Add to Bag</a></td>
     </tr>
     }
 

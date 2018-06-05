@@ -30,9 +30,9 @@ namespace CoffeeShop.Controllers
             return View("Index", dao.ItemSort(column));
         }
 
-        public ActionResult Add(int id = 0, int quantity = 0)
+        public ActionResult Add(int id = 0)/*, int quantity = 0)*/
         {
-            dao.UpdateQuantity(id, quantity);
+            //dao.UpdateQuantity(id, quantity);
             CoffeeEntities db = new CoffeeEntities();
             
             if (id == 0 && Session["Cart"] != null)
