@@ -31,6 +31,16 @@ namespace CoffeeShop.Models
             return db.Items.ToList();
         }
 
+        public int GetListLength()
+        {
+            int counter = 0;
+            foreach (Item item in db.Items)
+            {
+                counter++;
+            }
+            return counter;
+        }
+
         public List<Item> ItemSort(string column)
         {
             List<Item> Sorted = new List<Item>();

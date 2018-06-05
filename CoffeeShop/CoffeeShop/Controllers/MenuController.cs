@@ -32,6 +32,7 @@ namespace CoffeeShop.Controllers
 
         public ActionResult Add(int id = 0, int quantity = 0)
         {
+            dao.UpdateQuantity(id, quantity);
             CoffeeEntities db = new CoffeeEntities();
             
             if (id == 0 && Session["Cart"] != null)
@@ -81,6 +82,10 @@ namespace CoffeeShop.Controllers
         public ActionResult Clear()
         {
             Session.Clear();
+            for (int i = 0; i < dao.GetListLength(); i++)
+            {
+                dao.UpdateQuantity(i, 0);
+            }
             return View();
         }
     }

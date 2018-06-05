@@ -15,6 +15,8 @@ namespace CoffeeShop.Models
         
         List<Item> GetItemList();
 
+        int GetListLength();
+
         List<Item> ItemSort(string column);
 
         void AddItem(Item item);
