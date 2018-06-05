@@ -25,6 +25,32 @@ namespace CoffeeShop.Models
             return db.Items.ToList();
         }
 
+        public List<Item> ItemSort(string column)
+        {
+            List<Item> Sorted = new List<Item>();
+            //LINQ Query
+            if (column == "Name")
+            {
+                Sorted = (from b in db.Items
+                      orderby b.Name
+                      select b).ToList();
+            }
+            else if (column == "Description")
+            {
+                Sorted = (from b in db.Items
+                                 orderby b.Description
+                                 select b).ToList();
+            }
+            else if (column == "Price")
+            {
+                Sorted = (from b in db.Items
+                                 orderby b.Price
+                                 select b).ToList();
+            }
+
+            return Sorted;
+        }
+
         public void AddItem(Item item)
         {
             db.Items.Add(item);
@@ -48,5 +74,7 @@ namespace CoffeeShop.Models
         {
             db.Dispose();
         }
+
+
     }
 }

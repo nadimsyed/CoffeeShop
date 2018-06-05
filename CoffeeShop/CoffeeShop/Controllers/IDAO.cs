@@ -13,6 +13,8 @@ namespace CoffeeShop.Models
 
         List<Item> GetItemList();
 
+        List<Item> ItemSort(string column);
+
         void AddItem(Item item);
 
         void DeleteItem(int id);
