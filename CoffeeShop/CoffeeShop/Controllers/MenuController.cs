@@ -82,10 +82,10 @@ namespace CoffeeShop.Controllers
         public ActionResult Clear()
         {
             Session.Clear();
-            for (int i = 0; i < dao.GetListLength(); i++)
-            {
-                dao.UpdateQuantity(i, 0);
-            }
+            //for (int i = 0; i < dao.GetListLength(); i++)
+            //{
+            //    dao.UpdateQuantity(i, 0);
+            //}
             return View();
         }
     }

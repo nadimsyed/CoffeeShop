@@ -12,7 +12,7 @@ namespace CoffeeShop.Models
         Item GetItem(int id);
 
         void UpdateQuantity(int Id, int quantity);
-        
+
         List<Item> GetItemList();
 
         int GetListLength();
