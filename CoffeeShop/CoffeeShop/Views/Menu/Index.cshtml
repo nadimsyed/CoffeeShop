@@ -18,9 +18,9 @@
         <th>
             <a href="~/Menu/ItemSort?column=Price">@Html.DisplayNameFor(model => model.Price)</a>
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.Quantity)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -36,9 +36,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.Price)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.Quantity)
-        </td>
+        </td>*@
         @*<td>
             @Html.ActionLink("Edit", "Edit", new { id = item.ItemId }, new { @class = "btn btn-primary" }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.ItemId }, new { @class = "btn btn-primary" })
